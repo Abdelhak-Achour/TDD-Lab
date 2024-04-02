@@ -9,7 +9,7 @@ public class NumbersTests {
     }
 
     @Test
-    public void sumTwoPositives(){
+    public void sumTwoPositives() throws NegativeArgException {
         Assertions.assertEquals(7, Calc.sum(4, 3));
     }
 }
