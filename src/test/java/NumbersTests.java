@@ -5,11 +5,16 @@ public class NumbersTests {
 
     @Test
     public void sumWithNegative(){
-        Assertions.assertThrows(NegativeArgException.class, () -> Calc.sum(4, -3));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Calc.sum(4, -3));
     }
 
     @Test
-    public void sumTwoPositives() throws NegativeArgException {
+    public void sumTwoPositives() {
         Assertions.assertEquals(7, Calc.sum(4, 3));
+    }
+
+    @Test
+    public void sumWithNonInteger(){
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Calc.sum(4.5, 3));
     }
 }

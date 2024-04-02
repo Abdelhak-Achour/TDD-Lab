@@ -1,12 +1,19 @@
 public class Calc {
-    public static int sum(int a, int b) throws NegativeArgException {
-        if( a < 0 || b < 0)
+    public static int sum(Object a, Object b) {
+        try
         {
-            throw new NegativeArgException("Error: Negative int entered, invalid.");
+            if( (Integer) a < 0 || (Integer) b < 0)
+            {
+                throw new IllegalArgumentException("Error: Negative int entered, invalid.");
+            }
+            else
+            {
+                return (Integer) a + (Integer) b;
+            }
         }
-        else
+        catch (Exception e)
         {
-            return a + b;
+            throw new IllegalArgumentException("Error: Arg has to of type int.");
         }
     }
 }
