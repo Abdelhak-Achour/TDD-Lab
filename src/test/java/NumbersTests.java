@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class NumbersTests {
 
     @Test
-    public void testNegativity(){
-        Assertions.assertTrue(true);
+    public void sumWithNegative(){
+        Assertions.assertThrows(NegativeArgException.class, () -> Calc.sum(4, -3));
     }
 }
